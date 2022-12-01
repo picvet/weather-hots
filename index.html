@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Megrim&family=Modak&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Megrim&family=Modak&display=swap" rel="stylesheet">
+    <title>Simple Weather</title>
+
+    <!-- scripts -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+    <header class="max-h-12 bg-neutral-400 items-center mb-16">
+
+        <!-- This will have a padding on the sides -->
+        <div class="pad-header mx-32 flex justify-between ">
+            <!-- Items that will be on the left of the nav -->
+            <div class="left flex justify-items-stretch">
+
+                <!-- Icon of the website -->
+                <div class="logo-container flex h-11 mr-3">
+                    <img src="img/watermark.svg" alt="" class="bg-blend-darken hover:bg-blend-lighten rounded-full">
+                    <span class="inline-block align-middle text-4xl font-megrim font-extrabold">hots</span>
+                </div>
+
+
+                <!-- Header city link (City name) -->
+                <div href="" class="header-city-link items-center p-3 flex rounded-full mt-2 bg-neutral-200 font-bold text-xs decoration-1 h-7 align-middle">
+                    <h1 class="header-location mr-2 pl-1" id="city"></h1>
+                    <span class="header-temperature"></span>
+                    <span class="unit mr-2">°C</span>
+                    <img src="" alt="" class="header-weather-icon h-7 w-7 ml-2 pr-1">
+                </div>
+            </div>
+            <!-- Items that will be on the right of the nav -->
+            <div class="right self-end">
+                <!-- Search bar -->
+                <div class="bg-neutral-200 pointer-events-auto flex rounded-l-sm rounded-t-sm mb-1">
+                    <input id="cityInput" placeholder="Search city" type="text" class="flex items-center text-sm leading-6 text-slate-400 rounded-full ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300 bg-neutral-300 dark:highlight-white/5 dark:hover:bg-neutral-500">
+                    <button onclick="checkCity()" id="search-btn" type="button" class="btn">
+                      <svg width="24" height="24" fill="none" aria-hidden="true" class="mr-3 flex-none">
+                        <path d="m19 19-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle>
+                      </svg>
+                    </button>
+                    </input>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- The middle to start with the weather forecast displays -->
+
+    <section class="mx-32 flex items-center justify-center">
+        <!-- Card Container -->
+        <div class="flex flex-col p-6 m-3 space-y-10 bg-white rounded-2xl shadow-2xl md:flex-row md:space-y-0 md:space-x-10 md:m-0 md:p-16">
+            <!-- Image Div And Temperature-->
+            <div class="text-center">
+                <h3 class="text-lg font-bold">CURRENT WEATHER</h3>
+                <img src="" alt="" class="header-weather-icon mx-auto duration-200 w-60 hover:scale-105" />
+                <div class="text-center">
+                    <span class="header-temperature text-5xl"></span>
+                    <span class="unit mr-2 text-5xl">°C</span>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex flex-col space-y-6">
+                <div class="flex flex-col mb-4 space-y-3 text-center md:text-left">
+
+                    <!-- Title -->
+                    <div class="max-w-sm text-3xl font-medium">
+                        <h1 class="header-location mr-2 pl-1" id="city"></h1>
+                    </div>
+
+                </div>
+
+                <!-- Price Container -->
+                <div class="flex flex-col space-y-3 text-center md:text-left mb-5">
+
+
+                    <p class="condition text-base text-gray-400" id="condition">
+
+                    </p>
+                </div>
+
+                <!-- Time -->
+                <div class="text-lg space-y-2-text-center-md:text-left mb-10">
+                    <h3 class="time" id="time">
+
+                    </h3>
+                </div>
+
+
+
+                <div class="mt-3">
+                    <p>Wind speed: </p>
+                    <span class="wind-container text-2xl">
+                        <span>
+                        <p id="wind" class="wind inline-block"> </p>
+                         kph</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
