@@ -1,6 +1,6 @@
-# Simple Tailwind CSS Starter
+# Weather Hots Website
 
-This is an extremley simple setup to develop Tailwind projects. This will be used in my Tailwind From Scratch course.
+This is a simple website to develop with Tailwind. 
 
 ## Usage
 
